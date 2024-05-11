@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>Home Page</title>
+  </head>
+
+  <body>
+    <div class="main_container">
+      <header>
+        <h1>{{ message }}</h1>
+      </header>
+      <main>
+        <section class="team_selection">
+          <form action="{{ url_for('process_form') }}" method="post">
+            <label for="teams">Select a Team:</label>
+            <select id="team_choice" name="team_choice"></select>
+            <input type="submit" value="Go to page" />
+          </form>
+        </section>
+        <div class="footer_container">
+          <footer>
+            <p>&copy; Within The Cap 2024</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename = 'populateDropdown.js')}}"></script>
+  </body>
+</html>
